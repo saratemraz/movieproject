@@ -129,13 +129,13 @@ body {
   height: 370px;
   border-radius: 20px;
   background-color: #1f1e1e;
-  color: #ffffff;
+  color: #e8e5e5;
 }
 .card-story {
   height: 300px;
   border-radius: 20px;
   background-color: #1f1e1e;
-  color: #ffffff;
+  color: #e8e5e5;
 
 }
 .img-movie {
@@ -145,7 +145,7 @@ body {
 }
 
 .card-text-details {
-  color: #ffffff;
+  color: #e8e5e5;
   font-family: Almarai;
   font-size: 28px;
   font-weight: bold;
@@ -156,7 +156,7 @@ body {
 }
 
 .card-text-story {
-  color: #ffffff;
+  color: #e8e5e5;
   font-family: Almarai;
   font-size: 18px;
   letter-spacing: 0;
@@ -165,7 +165,7 @@ body {
 
 }
 .card-text-title {
-  color: #ffffff;
+  color: #e8e5e5;
   font-family: Almarai;
   font-size: 36px;
   font-weight: bold;
@@ -176,7 +176,7 @@ body {
 
 .sidebar {
   background-color: #000000; /* لون خلفية داكن */
-  color: #ffffff; /* لون النص أبيض */
+  color: #e8e5e5; /* لون النص أبيض */
   padding: 20px; /* إضافة مساحة داخلية */
   border-radius: 8px; /* حواف مستديرة */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* ظل خفيف لجعل السايدبار يبرز */
@@ -184,7 +184,7 @@ body {
 }
 
 .sidebar h5 {
-  color: #ffffff; /* لون عنوان التصنيفات */
+  color: #e8e5e5; /* لون عنوان التصنيفات */
   margin-bottom: 15px; /* المسافة بين العنوان والعناصر التالية */
   
 }
@@ -195,7 +195,7 @@ body {
 
 .sidebar .dropdown-toggle {
   background-color: #1a1a1a; /* لون زر القوائم المنسدلة */
-  color: #ffffff; /* لون النص في الزر */
+  color: #e8e5e5; /* لون النص في الزر */
   border: none; /* إزالة الحدود */
   border-radius: 5px; /* حواف مستديرة */
   transition: background-color 0.3s; /* تأثير عند التمرير */
@@ -203,18 +203,18 @@ body {
 
 .sidebar .dropdown-toggle:hover {
   background-color: #232323; /* لون الزر عند التمرير */
-  color: #ffffff; /* لون النص عند التمرير */
+  color: #e8e5e5; /* لون النص عند التمرير */
 }
 
 .sidebar .dropdown-item {
-  color: #ffffff; /* لون النص لعناصر القوائم المنسدلة */
+  color: #e8e5e5; /* لون النص لعناصر القوائم المنسدلة */
   background-color: #222222; /* لون الزر عند التمرير */
 
 }
 
 .sidebar .dropdown-item:hover {
   background-color: #151515; /* لون خلفية العناصر عند التمرير */
-  color: #ffffff; /* لون النص عند التمرير */
+  color: #e8e5e5; /* لون النص عند التمرير */
 }
 
 
@@ -239,7 +239,7 @@ body {
 }
 
 .pagination .page-link {
-  color: #ffffff; /* لون النص للأزرار */
+  color: #e8e5e5; /* لون النص للأزرار */
   background-color: #1a1a1a; /* لون خلفية الأزرار */
   border: none; /* إزالة الحدود */
   border-radius: 5px; /* حواف مستديرة */
@@ -249,16 +249,16 @@ body {
 
 .pagination .page-link:hover {
   background-color: #5d5d5e; /* لون الخلفية عند التمرير */
-  color: #ffffff; /* لون النص عند التمرير */
+  color: #e8e5e5; /* لون النص عند التمرير */
 }
 
 .pagination .active .page-link {
   background-color: #19191a; /* لون الخلفية للزر النشط */
-  color: #ffffff; /* لون النص للزر النشط */
+  color: #e8e5e5; /* لون النص للزر النشط */
   pointer-events: none; /* عدم السماح بالنقر على الزر النشط */
 }
 
 .pagination .break-link {
-  color: #ffffff; /* لون النص لفاصل الصفحات */
+  color: #e8e5e5; /* لون النص لفاصل الصفحات */
   padding: 10px 15px; /* إضافة مساحة داخلية */
 }
