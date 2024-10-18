@@ -4,16 +4,18 @@ body {
 
 .color-body {
   background-color: #000000;
+  min-height: 100vh;
 }
 
 .nav-style {
   height: 90px;
+  display: flex;
   width: 1440px;
   background-color: #000000;
-  color: #ddd; /* لون النص */
-  box-shadow: 4px 1px 20px 5px rgba(73, 73, 73, 0.5); /* الظل الخفيف */
-
-
+  color: #ddd;
+  box-shadow: 4px 1px 20px 5px rgba(73, 73, 73, 0.5);
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -28,7 +30,6 @@ body {
   max-width: 600px; /* الحد الأقصى للعرض */
   margin: 0 auto; /* لضبط العنصر في المنتصف */
   color: #ddd; /* لون النص */
-
 }
 
 .search input {
@@ -65,10 +66,9 @@ body {
   outline: none; /* إزالة الإطار الافتراضي عند التركيز */
 }
 .search input::placeholder {
-  color: #a29f9f; 
+  color: #a29f9f;
   opacity: 1; /* للتأكد من ظهور اللون بوضوح */
 }
-
 
 .card {
   position: relative;
@@ -124,7 +124,18 @@ body {
   color: #555555;
   background-color: #0f0f0f;
 }
-
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  padding-bottom: 20px;
+}
+.my_movies_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  padding-bottom: 20px;
+}
 .card-detalis {
   height: 370px;
   border-radius: 20px;
@@ -136,7 +147,6 @@ body {
   border-radius: 20px;
   background-color: #1f1e1e;
   color: #e8e5e5;
-
 }
 .img-movie {
   height: 360px;
@@ -152,7 +162,6 @@ body {
   letter-spacing: 0;
   line-height: 49px;
   background-color: #1f1e1e;
-
 }
 
 .card-text-story {
@@ -161,8 +170,7 @@ body {
   font-size: 18px;
   letter-spacing: 0;
   line-height: 32px;
-    background-color: #1f1e1e;
-
+  background-color: #1f1e1e;
 }
 .card-text-title {
   color: #e8e5e5;
@@ -173,20 +181,20 @@ body {
   line-height: 49px;
 }
 
-
 .sidebar {
+  display: flex;
+  gap: 2rem;
   background-color: #000000; /* لون خلفية داكن */
   color: #e8e5e5; /* لون النص أبيض */
   padding: 20px; /* إضافة مساحة داخلية */
   border-radius: 8px; /* حواف مستديرة */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* ظل خفيف لجعل السايدبار يبرز */
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .sidebar h5 {
   color: #e8e5e5; /* لون عنوان التصنيفات */
   margin-bottom: 15px; /* المسافة بين العنوان والعناصر التالية */
-  
 }
 
 .sidebar .dropdown {
@@ -209,24 +217,36 @@ body {
 .sidebar .dropdown-item {
   color: #e8e5e5; /* لون النص لعناصر القوائم المنسدلة */
   background-color: #222222; /* لون الزر عند التمرير */
-
 }
 
 .sidebar .dropdown-item:hover {
   background-color: #151515; /* لون خلفية العناصر عند التمرير */
   color: #e8e5e5; /* لون النص عند التمرير */
 }
+.mylist {
+  background-color: #1a1a1a;
+  color: #e8e5e5;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mylist:hover {
+  background-color: #232323; /* لون الزر عند التمرير */
+  color: #e8e5e5; /* لون النص عند التمرير */
+}
 
-
-.footer{
+.footer {
   height: 90px;
   width: 100%;
   background-color: #000000;
   color: #ddd; /* لون النص */
   box-shadow: 4px 1px 20px 5px rgba(73, 73, 73, 0.5); /* الظل الخفيف */
 }
-
-
 
 .pagination {
   background-color: #121212; /* لون خلفية داكن */
@@ -261,4 +281,137 @@ body {
 .pagination .break-link {
   color: #e8e5e5; /* لون النص لفاصل الصفحات */
   padding: 10px 15px; /* إضافة مساحة داخلية */
+}
+
+@media (max-width: 576px) {
+  .pagination {
+    max-width: 570px;
+    padding: 0.5rem !important;
+  }
+  .pagination .page-item {
+    margin: 0 2px; /* مسافة بين عناصر التصفح */
+  }
+
+  .pagination .page-link {
+    padding: 2px 4px;
+  }
+  .sidebar {
+    gap: 1rem;
+
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .sidebar h5 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  .sidebar .dropdown {
+    margin-bottom: 10px;
+  }
+
+  .sidebar .dropdown-toggle {
+    font-size: 0.7rem;
+  }
+  .mylist {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+
+  .nav-style {
+    height: 70px;
+  }
+  .nav-style a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+  }
+
+  .logo {
+    max-width: 100px;
+    max-height: 45px;
+  }
+
+  .search {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    height: 45px;
+  }
+
+  .search input {
+    width: 100%;
+    height: 45px;
+    text-indent: 50px;
+  }
+  .card-detalis {
+    height: 300px;
+    border-radius: 10px;
+  }
+  .card-story {
+    height: 250px;
+    border-radius: 20px;
+  }
+  .img-movie {
+    height: 250px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .card-text-details {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 25px;
+  }
+
+  .card-text-story {
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 32px;
+    background-color: #1f1e1e;
+  }
+  .card-text-title {
+    font-size: 28px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 340px) {
+  .card-detalis {
+    height: 250px;
+    border-radius: 5px;
+  }
+  .card-story {
+    height: 250px;
+  }
+  .img-movie {
+    height: 200px;
+    padding: 5px;
+  }
+  .sidebar {
+    gap: 0.5rem;
+
+    padding: 8px;
+    margin-top: 15px;
+  }
+  .card-text-details {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 13px;
+  }
+
+  .card-text-story {
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 15px;
+  }
+  .card-text-title {
+    font-size: 22px;
+    line-height: 15px;
+  }
 }
