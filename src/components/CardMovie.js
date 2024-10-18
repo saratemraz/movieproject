@@ -1,10 +1,12 @@
 import React from "react";
-import { Col } from "react-bootstrap";
+import { useMovies } from "../context/MyMoviesContext";
 import { Link } from "react-router-dom";
 
 const CardMovie = ({ mov, onClick }) => {
+  const { addToList } = useMovies();
+
   return (
-    <Link to={`/movie/${mov.id}`}>
+    <>
       <div className="card">
         <img
           src={`https://image.tmdb.org/t/p/w500/${mov.poster_path}`}
@@ -17,10 +19,19 @@ const CardMovie = ({ mov, onClick }) => {
             <p>تاريخ الاصدار: {mov.release_date}</p>
             <p>عدد المقيمين: {mov.vote_count}</p>
             <p>التقييم: {mov.vote_average}</p>
+            <Link to={`/movie/${mov.id}`}>
+              <button className="btn btn-primary w-100 my-1">للمشاهده</button>
+            </Link>
+            <button
+              className="btn btn-primary w-100"
+              onClick={() => addToList(mov)}
+            >
+              اضف للقائمه
+            </button>
           </div>
         </div>
       </div>
-    </Link>
+    </>
   );
 };
 

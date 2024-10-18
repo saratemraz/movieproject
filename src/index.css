@@ -4,6 +4,7 @@ body {
 
 .color-body {
   background-color: #000000;
+  min-height: 100vh;
 }
 
 .nav-style {
@@ -129,6 +130,12 @@ body {
   gap: 1rem;
   padding-bottom: 20px;
 }
+.my_movies_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+  padding-bottom: 20px;
+}
 .card-detalis {
   height: 370px;
   border-radius: 20px;
@@ -216,6 +223,22 @@ body {
   background-color: #151515; /* لون خلفية العناصر عند التمرير */
   color: #e8e5e5; /* لون النص عند التمرير */
 }
+.mylist {
+  background-color: #1a1a1a;
+  color: #e8e5e5;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mylist:hover {
+  background-color: #232323; /* لون الزر عند التمرير */
+  color: #e8e5e5; /* لون النص عند التمرير */
+}
 
 .footer {
   height: 90px;
@@ -259,6 +282,7 @@ body {
   color: #e8e5e5; /* لون النص لفاصل الصفحات */
   padding: 10px 15px; /* إضافة مساحة داخلية */
 }
+
 @media (max-width: 576px) {
   .pagination {
     max-width: 570px;
@@ -289,6 +313,10 @@ body {
 
   .sidebar .dropdown-toggle {
     font-size: 0.7rem;
+  }
+  .mylist {
+    font-size: 0.7rem;
+    padding: 6px 12px;
   }
 
   .nav-style {
@@ -364,7 +392,12 @@ body {
     height: 200px;
     padding: 5px;
   }
+  .sidebar {
+    gap: 0.5rem;
 
+    padding: 8px;
+    margin-top: 15px;
+  }
   .card-text-details {
     font-size: 10px;
     font-weight: bold;

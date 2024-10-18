@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import MoviesList from "./components/MoviesList";
-import { Container, Row, Col, Button, Collapse } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -8,6 +8,8 @@ import MovieDetails from "./components/MovieDetails";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 import Footer from "./components/Footer";
+import MyList from "./components/MyList";
+import { MyMoviesContext } from "./context/MyMoviesContext";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -91,27 +93,30 @@ const App = () => {
   };
 
   return (
-    <div className="font color-body">
-      <NavBar search={search} />
-      <Container fluid>
-        <Routes>
-          <Route
-            path="/movieproject"
-            element={
-              <MoviesList
-                movies={movies}
-                getPage={getPage}
-                pageCount={pageCount}
-                onCategorySelect={onCategorySelect}
-                handleSortChange={handleSortChange}
-              />
-            }
-          />
-          <Route path="/movie/:id" element={<MovieDetails />} />
-        </Routes>
-      </Container>
-      <Footer />
-    </div>
+    <MyMoviesContext>
+      <div className="font color-body">
+        <NavBar search={search} />
+        <Container fluid>
+          <Routes>
+            <Route
+              path="/movieproject"
+              element={
+                <MoviesList
+                  movies={movies}
+                  getPage={getPage}
+                  pageCount={pageCount}
+                  onCategorySelect={onCategorySelect}
+                  handleSortChange={handleSortChange}
+                />
+              }
+            />
+            <Route path="/movie/:id" element={<MovieDetails />} />
+            <Route path="/mylist" element={<MyList />} />
+          </Routes>
+        </Container>
+        <Footer />
+      </div>
+    </MyMoviesContext>
   );
 };
 

@@ -22,13 +22,7 @@ const MoviesList = ({
         <div className="movies-container ">
           {movies.length >= 1 ? (
             movies.map((mov) => {
-              return (
-                <CardMovie
-                  key={mov.id}
-                  mov={mov}
-                  //   onClick={handleMovieCardClick}
-                />
-              );
+              return <CardMovie key={mov.id} mov={mov} />;
             })
           ) : (
             <h2 className="text-center p-5">لا يوجد أفلام..........</h2>

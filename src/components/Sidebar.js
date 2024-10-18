@@ -1,4 +1,5 @@
 import { ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ getPage, onCategorySelect, handleSortChange }) => {
   const categories = [
@@ -68,6 +69,11 @@ const Sidebar = ({ getPage, onCategorySelect, handleSortChange }) => {
             </Dropdown.Item>
           </DropdownButton>
         </Dropdown>
+      </div>
+      <div>
+        <Link to="/mylist" className="mylist">
+          قائمتى
+        </Link>
       </div>
     </div>
   );
