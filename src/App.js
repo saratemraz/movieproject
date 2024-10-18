@@ -5,8 +5,8 @@ import NavBar from "./components/NavBar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import MovieDetails from "./components/MovieDetails";
-import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+
 import Footer from "./components/Footer";
 
 const App = () => {
