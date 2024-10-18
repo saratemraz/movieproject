@@ -2,10 +2,17 @@ import { useMovies } from "../context/MyMoviesContext";
 import { Link } from "react-router-dom";
 function MyList() {
   const { myList } = useMovies();
-
-  if (!myList || myList.length === 0) return <div>لا يوجد قائمة</div>;
+  if (!myList || myList.length === 0) {
+    return (
+      <div className="min_height">
+        <h2 class="d-flex justify-content-center align-items-center my-5">
+          لا يوجد قائمة
+        </h2>
+      </div>
+    );
+  }
   return (
-    <div>
+    <div class="min_height">
       <h2>قائمتي المفضله</h2>
       <div class="my_movies_list">
         {myList.map((mov) => (
