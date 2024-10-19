@@ -6,8 +6,7 @@ function MyList() {
   const navigate = useNavigate();
   
   const GoToMovie = (movie) => navigate(`/movie/${movie.id}`);
-  
-  // التحقق مما إذا كانت القائمة فارغة أو غير موجودة
+
   if (!myList || myList.length === 0) {
     return (
       <div className="min_height">
@@ -17,10 +16,10 @@ function MyList() {
       </div>
     );
   }
-  
+
   return (
-    <div className="min_height">
-      <h2>قائمتي المفضلة</h2>
+    <div>
+      <h2>قائمتي المفضله</h2>
       <div className="my_movies_list">
         {myList.map((mov) => (
           <div className="card" key={mov.id}>
