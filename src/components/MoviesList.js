@@ -1,5 +1,4 @@
 import React from "react";
-import { Row } from "react-bootstrap";
 import CardMovie from "./CardMovie";
 import PaginationComponent from "./Pagination"; // تأكد من أن هذا هو اسم المكون
 import Sidebar from "./Sidebar";
