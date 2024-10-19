@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import logo from "../images/logo.png";
 import { useNavigate } from "react-router-dom";
 const NavBar = ({ search }) => {
