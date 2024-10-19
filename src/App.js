@@ -96,7 +96,7 @@ const App = () => {
     <MyMoviesContext>
       <div className="font color-body">
         <NavBar search={search} />
-        <Container fluid>
+        <Container >
           <Routes>
             <Route
               path="/movieproject"
