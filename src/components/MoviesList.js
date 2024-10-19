@@ -17,7 +17,7 @@ const MoviesList = ({
           onCategorySelect={onCategorySelect}
           handleSortChange={handleSortChange}
         />
-        <div className="movies-container ">
+        <div className="movies-container">
           {movies.length >= 1 ? (
             movies.map((mov) => {
               return <CardMovie key={mov?.id} mov={mov} />;

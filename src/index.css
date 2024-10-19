@@ -76,13 +76,15 @@ body {
   height: 375px;
 }
 
-.card_image {
+.movies-container .card .card__image {
   display: block;
   width: 100%;
-  max-width:100%;
+  max-width: 100%;
   height: 100%;
   border-radius: 5px;
   margin: auto;
+  object-fit: contain;
+  background-color: #030411;
 }
 
 .card_overlay {
@@ -143,7 +145,6 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
   padding-bottom: 20px;
-  padding-inline: 2rem;
 }
 .my_movies_list {
   display: grid;
