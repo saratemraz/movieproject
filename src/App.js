@@ -21,7 +21,7 @@ const App = () => {
       `https://api.themoviedb.org/3/movie/${sort}?api_key=52ef927bbeb21980cd91386a29403c78&language=ar`
     );
     setMovies(res.data.results);
-    setPageCount(res.data.total_pages);
+    setPageCount(Math.min(res.data.total_pages, 500));
   };
 
   const getPage = async (page, sort = sortBy) => {
@@ -29,7 +29,8 @@ const App = () => {
       `https://api.themoviedb.org/3/movie/${sort}?api_key=52ef927bbeb21980cd91386a29403c78&language=ar&page=${page}`
     );
     setMovies(res.data.results);
-    // setPageCount(res.data.total_pages);
+    const totalPages = Math.ceil(res.data.total_results / 20);
+    setPageCount(totalPages > 500 ? 500 : totalPages);
   };
 
   const onCategorySelect = async (category) => {
@@ -40,7 +41,8 @@ const App = () => {
         )}`
       );
       setMovies(res.data.results);
-      setPageCount(res.data.total_pages);
+      const totalPages = Math.ceil(res.data.total_results / 20);
+      setPageCount(totalPages > 500 ? 500 : totalPages);
     } catch (error) {
       console.error("Error fetching movies by category:", error);
     }
@@ -88,7 +90,8 @@ const App = () => {
         `https://api.themoviedb.org/3/search/movie?api_key=52ef927bbeb21980cd91386a29403c78&query=${word}&language=ar`
       );
       setMovies(res.data.results);
-      setPageCount(res.data.total_pages);
+      const totalPages = Math.ceil(res.data.total_results / 20);
+      setPageCount(totalPages > 500 ? 500 : totalPages);
     }
   };
 

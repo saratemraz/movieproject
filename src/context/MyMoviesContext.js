@@ -13,6 +13,7 @@ function MyMoviesContext({ children }) {
   const value = {
     myList,
     addToList,
+    setMyList,
   };
   return (
     <MoviesContext.Provider value={value}>{children}</MoviesContext.Provider>

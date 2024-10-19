@@ -1,7 +1,9 @@
 import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import logo from "../images/logo.png";
+import { useNavigate } from "react-router-dom";
 const NavBar = ({ search }) => {
+  const navigat = useNavigate();
   const onSearch = (word) => {
     search(word);
   };
@@ -9,9 +11,12 @@ const NavBar = ({ search }) => {
     <div className="nav-style w-100">
       <Container>
         <div className="d-flex justify-content-center align-items-center">
-          <a href="/movieproject">
-            <img className="logo p-10" src={logo} alt="logo" />
-          </a>
+          <img
+            className="logo p-10"
+            src={logo}
+            alt="logo"
+            onClick={() => navigat("/movieproject")}
+          />
 
           <div className="search">
             <input

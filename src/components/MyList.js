@@ -1,7 +1,10 @@
 import { useMovies } from "../context/MyMoviesContext";
 import { Link } from "react-router-dom";
 function MyList() {
-  const { myList } = useMovies();
+  const { myList, setMyList } = useMovies();
+  const deleteFromList = (id) => {
+    setMyList(myList.filter((mov) => mov.id !== id));
+  };
   if (!myList || myList.length === 0) {
     return (
       <div className="min_height">
@@ -33,6 +36,12 @@ function MyList() {
                     للمشاهده
                   </button>
                 </Link>
+                <button
+                  className="btn btn-dark w-100 my-1"
+                  onClick={() => deleteFromList(mov.id)}
+                >
+                  حذف
+                </button>
               </div>
             </div>
           </div>

@@ -15,7 +15,7 @@ const PaginationComponent = ({ getPage, pageCount }) => {
       onPageChange={handlePageClick}
       marginPagesDisplayed={2}
       pageRangeDisplayed={2}
-      pageCount={pageCount > 500 ? (pageCount = 500) : pageCount}
+      pageCount={pageCount}
       previousLabel="السابق"
       containerClassName={"pagination justify-content-center p-3"}
       pageClassName={"page-item"}
