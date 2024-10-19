@@ -20,10 +20,10 @@ const CardMovie = ({ mov, onClick }) => {
             <p>عدد المقيمين: {mov.vote_count}</p>
             <p>التقييم: {mov.vote_average}</p>
             <Link to={`/movie/${mov.id}`}>
-              <button className="btn btn-primary w-100 my-1">للمشاهده</button>
+              <button className="btn w-100 my-1">للمشاهده</button>
             </Link>
             <button
-              className="btn btn-primary w-100"
+              className="btn w-100"
               onClick={() => addToList(mov)}
             >
               اضف للقائمه

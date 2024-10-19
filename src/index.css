@@ -73,7 +73,6 @@ body {
 .card {
   position: relative;
   transition: all 0.5s ease-in;
-  cursor: pointer;
   height: 375px;
 }
 
@@ -102,6 +101,19 @@ body {
   opacity: 0.8;
 }
 
+.card_overlay button {
+  color: #1a1a1a;
+  background-color: #cbcbcb;
+  border: none;
+  margin-top: 0.2em;
+}
+
+.card_overlay button:hover,
+.card_overlay button:focus {
+  color: #000;
+  background-color: #ffffff;
+  border: none;
+}
 .overlay_text {
   color: white;
   font-size: 16px;
@@ -126,9 +138,10 @@ body {
 }
 .movies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
   padding-bottom: 20px;
+  padding-inline: 2rem;
 }
 .my_movies_list {
   display: grid;
