@@ -6,6 +6,9 @@ body {
   background-color: #000000;
   min-height: 100vh;
 }
+.min_height {
+  min-height: 70vh;
+}
 
 .nav-style {
   height: 90px;

@@ -1,13 +1,26 @@
 import { useMovies } from "../context/MyMoviesContext";
 import { useNavigate } from "react-router-dom";
+
 function MyList() {
   const { myList } = useMovies();
   const navigate = useNavigate();
+  
   const GoToMovie = (movie) => navigate(`/movie/${movie.id}`);
-  if (!myList || myList.length === 0) return <div>لا يوجد قائمة</div>;
+  
+  // التحقق مما إذا كانت القائمة فارغة أو غير موجودة
+  if (!myList || myList.length === 0) {
+    return (
+      <div className="min_height">
+        <h2 className="d-flex justify-content-center align-items-center my-5">
+          لا يوجد قائمة
+        </h2>
+      </div>
+    );
+  }
+  
   return (
-    <div>
-      <h2>قائمتي المفضله</h2>
+    <div className="min_height">
+      <h2>قائمتي المفضلة</h2>
       <div className="my_movies_list">
         {myList.map((mov) => (
           <div className="card" key={mov.id}>
@@ -26,7 +39,7 @@ function MyList() {
                   className="btn w-100 my-1"
                   onClick={() => GoToMovie(mov)}
                 >
-                  للمشاهده
+                  للمشاهدة
                 </button>
               </div>
             </div>
