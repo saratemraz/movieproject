@@ -93,13 +93,15 @@ const App = () => {
             <Route
               path="/movieproject"
               element={
-                <MoviesList
-                  movies={movies}
-                  getPage={getPage}
-                  pageCount={pageCount}
-                  onCategorySelect={onCategorySelect}
-                  handleSortChange={handleSortChange}
-                />
+                <Container>
+                  <MoviesList
+                    movies={movies}
+                    getPage={getPage}
+                    pageCount={pageCount}
+                    onCategorySelect={onCategorySelect}
+                    handleSortChange={handleSortChange}
+                  />
+                </Container>
               }
             />
             <Route path="/movie/:id" element={<MovieDetails />} />

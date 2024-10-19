@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
 const PaginationComponent = ({ getPage, pageCount }) => {
   const handlePageClick = (data) => {
-    console.log(data.selected + 1);
     getPage(data.selected + 1);
   };
-  console.log(pageCount);
+
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth);
+    });
+    return () => window.removeEventListener("resize", () => null);
+  }, []);
 
   return (
     <ReactPaginate
       breakLabel="..."
       nextLabel="التالى"
       onPageChange={handlePageClick}
-      marginPagesDisplayed={2}
-      pageRangeDisplayed={2}
+      marginPagesDisplayed={width > 768 ? 2 : 0}
+      pageRangeDisplayed={width > 768 ? 2 : 0}
       pageCount={pageCount > 500 ? (pageCount = 500) : pageCount}
       previousLabel="السابق"
-      containerClassName={"pagination justify-content-center p-3"}
+      containerClassName={"pagination justify-content-center py-2"}
       pageClassName={"page-item"}
       pageLinkClassName={"page-link"}
       previousClassName={"page-item"}
