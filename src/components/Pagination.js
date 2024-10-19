@@ -3,10 +3,8 @@ import ReactPaginate from "react-paginate";
 
 const PaginationComponent = ({ getPage, pageCount }) => {
   const handlePageClick = (data) => {
-    console.log(data.selected + 1);
     getPage(data.selected + 1);
   };
-  console.log(pageCount);
 
   return (
     <ReactPaginate
@@ -17,7 +15,7 @@ const PaginationComponent = ({ getPage, pageCount }) => {
       pageRangeDisplayed={2}
       pageCount={pageCount > 500 ? (pageCount = 500) : pageCount}
       previousLabel="السابق"
-      containerClassName={"pagination justify-content-center p-3"}
+      containerClassName={"pagination justify-content-center py-2"}
       pageClassName={"page-item"}
       pageLinkClassName={"page-link"}
       previousClassName={"page-item"}
