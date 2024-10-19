@@ -428,3 +428,32 @@ body {
     line-height: 15px;
   }
 }
+
+/* ============
+     Not Found
+================*/
+.not-found {
+  padding-top: 6rem;
+  color: #eee;
+  min-height: 75vh;
+}
+
+.not-found p {
+  font-size: 1.8rem;
+  text-align: center;
+  width: 100%;
+}
+
+.not-found button {
+  color: #1a1a1a;
+  background-color: #cbcbcb;
+  border: none;
+  margin-top: 2em;
+}
+
+.not-found button:hover,
+.not-found button:focus {
+  color: #000;
+  background-color: #eee;
+  border: none;
+}

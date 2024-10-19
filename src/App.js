@@ -9,6 +9,7 @@ import MovieDetails from "./components/MovieDetails";
 import Footer from "./components/Footer";
 import MyList from "./components/MyList";
 import { MyMoviesContext } from "./context/MyMoviesContext";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -103,6 +104,7 @@ const App = () => {
             />
             <Route path="/movie/:id" element={<MovieDetails />} />
             <Route path="/mylist" element={<MyList />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>
         <Footer />
