@@ -1,15 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import MoviesList from "./components/MoviesList";
+import axiosInstance from "./axiosConfig/axiosinstance";
 import { Container } from "react-bootstrap";
-import NavBar from "./components/NavBar";
-import axios from "axios";
 import { useState, useEffect } from "react";
-import MovieDetails from "./components/MovieDetails";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-
+import NavBar from "./components/NavBar";
+import MoviesList from "./components/MoviesList";
+import MovieDetails from "./components/MovieDetails";
 import Footer from "./components/Footer";
 import MyList from "./components/MyList";
 import { MyMoviesContext } from "./context/MyMoviesContext";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -17,27 +17,21 @@ const App = () => {
   const [sortBy, setSortBy] = useState("popular");
 
   const getAllMovies = async (sort = "popular") => {
-    const res = await axios.get(
-      `https://api.themoviedb.org/3/movie/${sort}?api_key=52ef927bbeb21980cd91386a29403c78&language=ar`
-    );
+    const res = await axiosInstance.get(`movie/${sort}`);
     setMovies(res.data.results);
     setPageCount(res.data.total_pages);
   };
 
   const getPage = async (page, sort = sortBy) => {
-    const res = await axios.get(
-      `https://api.themoviedb.org/3/movie/${sort}?api_key=52ef927bbeb21980cd91386a29403c78&language=ar&page=${page}`
-    );
+    const res = await axiosInstance.get(`movie/${sort}?page=${page}`);
     setMovies(res.data.results);
     // setPageCount(res.data.total_pages);
   };
 
   const onCategorySelect = async (category) => {
     try {
-      const res = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=52ef927bbeb21980cd91386a29403c78&language=ar&with_genres=${getGenreId(
-          category
-        )}`
+      const res = await axiosInstance.get(
+        `discover/movie?with_genres=${getGenreId(category)}`
       );
       setMovies(res.data.results);
       setPageCount(res.data.total_pages);
@@ -84,9 +78,7 @@ const App = () => {
     if (word === "") {
       getAllMovies();
     } else {
-      const res = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=52ef927bbeb21980cd91386a29403c78&query=${word}&language=ar`
-      );
+      const res = await axiosInstance.get(`search/movie?query=${word}`);
       setMovies(res.data.results);
       setPageCount(res.data.total_pages);
     }
@@ -112,6 +104,7 @@ const App = () => {
             />
             <Route path="/movie/:id" element={<MovieDetails />} />
             <Route path="/mylist" element={<MyList />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>
         <Footer />

@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../axiosConfig/axiosinstance";
 
 const MovieDetails = () => {
   const param = useParams();
   const [movie, setMovie] = useState([]);
 
-  //get  movie by details
-  const getMovieDetails = async () => {
-    const res = await axios.get(
-      `https://api.themoviedb.org/3/movie/${param.id}?api_key=52ef927bbeb21980cd91386a29403c78&language=ar`
-    );
-    setMovie(res.data);
-  };
   useEffect(() => {
+    const getMovieDetails = async () => {
+      const res = await axiosInstance.get(`movie/${param.id}`);
+      setMovie(res.data);
+    };
     getMovieDetails();
-  }, []);
+  }, [param.id]);
   return (
-    <div class="container">
+    <div className
+    ="container">
       <Row
         className="justify-content-center"
         style={{ fontFamily: "Almarai, sans-serif" }}
