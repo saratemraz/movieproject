@@ -15,7 +15,8 @@ const MovieDetails = () => {
     getMovieDetails();
   }, [param.id]);
   return (
-    <div class="container">
+    <div className
+    ="container">
       <Row
         className="justify-content-center"
         style={{ fontFamily: "Almarai, sans-serif" }}

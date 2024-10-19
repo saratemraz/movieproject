@@ -8,9 +8,9 @@ function MyList() {
   return (
     <div>
       <h2>قائمتي المفضله</h2>
-      <div class="my_movies_list">
+      <div className="my_movies_list">
         {myList.map((mov) => (
-          <div className="card">
+          <div className="card" key={mov.id}>
             <img
               src={`https://image.tmdb.org/t/p/w500/${mov.poster_path}`}
               className="card__image"
