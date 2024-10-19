@@ -1,10 +1,11 @@
 import React from "react";
 import { useMovies } from "../context/MyMoviesContext";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const CardMovie = ({ mov, onClick }) => {
   const { addToList } = useMovies();
-
+  const navigate = useNavigate();
+  const GoToMovie = (movie) => navigate(`/movie/${movie.id}`);
   return (
     <>
       <div className="card">
@@ -19,9 +20,13 @@ const CardMovie = ({ mov, onClick }) => {
             <p>تاريخ الاصدار: {mov.release_date}</p>
             <p>عدد المقيمين: {mov.vote_count}</p>
             <p>التقييم: {mov.vote_average}</p>
-            <Link to={`/movie/${mov.id}`}>
-              <button className="btn w-100 my-1">للمشاهده</button>
-            </Link>
+
+            <button
+                  className="btn w-100 my-1"
+                  onClick={() => GoToMovie(mov)}
+                >
+                  للمشاهده
+                </button>
             <button
               className="btn w-100"
               onClick={() => addToList(mov)}

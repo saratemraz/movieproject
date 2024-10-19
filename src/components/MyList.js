@@ -1,8 +1,9 @@
 import { useMovies } from "../context/MyMoviesContext";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function MyList() {
   const { myList } = useMovies();
-
+  const navigate = useNavigate();
+  const GoToMovie = (movie) => navigate(`/movie/${movie.id}`);
   if (!myList || myList.length === 0) return <div>لا يوجد قائمة</div>;
   return (
     <div>
@@ -21,11 +22,12 @@ function MyList() {
                 <p>تاريخ الاصدار: {mov.release_date}</p>
                 <p>عدد المقيمين: {mov.vote_count}</p>
                 <p>التقييم: {mov.vote_average}</p>
-                <Link to={`/movie/${mov.id}`}>
-                  <button className="btn w-100 my-1">
-                    للمشاهده
-                  </button>
-                </Link>
+                <button
+                  className="btn w-100 my-1"
+                  onClick={() => GoToMovie(mov)}
+                >
+                  للمشاهده
+                </button>
               </div>
             </div>
           </div>
