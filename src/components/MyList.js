@@ -1,7 +1,8 @@
 import { useMovies } from "../context/MyMoviesContext";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function MyList() {
   const { myList } = useMovies();
+<<<<<<< HEAD
   if (!myList || myList.length === 0) {
     return (
       <div className="min_height">
@@ -11,12 +12,17 @@ function MyList() {
       </div>
     );
   }
+=======
+  const navigate = useNavigate();
+  const GoToMovie = (movie) => navigate(`/movie/${movie.id}`);
+  if (!myList || myList.length === 0) return <div>لا يوجد قائمة</div>;
+>>>>>>> d129f83910e74b2d1238709d2a1cb0a5bd041a50
   return (
     <div class="min_height">
       <h2>قائمتي المفضله</h2>
-      <div class="my_movies_list">
+      <div className="my_movies_list">
         {myList.map((mov) => (
-          <div className="card">
+          <div className="card" key={mov.id}>
             <img
               src={`https://image.tmdb.org/t/p/w500/${mov.poster_path}`}
               className="card__image"
@@ -28,11 +34,12 @@ function MyList() {
                 <p>تاريخ الاصدار: {mov.release_date}</p>
                 <p>عدد المقيمين: {mov.vote_count}</p>
                 <p>التقييم: {mov.vote_average}</p>
-                <Link to={`/movie/${mov.id}`}>
-                  <button className="btn btn-primary w-100 my-1">
-                    للمشاهده
-                  </button>
-                </Link>
+                <button
+                  className="btn w-100 my-1"
+                  onClick={() => GoToMovie(mov)}
+                >
+                  للمشاهده
+                </button>
               </div>
             </div>
           </div>
